@@ -14,6 +14,6 @@ Feature: Registration Form
     And user click on Register
     Then a succes message should display
 
-    Examples: 
+    Examples:
       | full_name | email             | password | country | gender | calorie | salt  |
-      | mohamad   | mohamed@gmail.con | 147     | Fiji    | male   | true    | flase |
+      | mohamad   | mohamed@gmail.con | abcd      | Fiji    | male   | true    | flase |

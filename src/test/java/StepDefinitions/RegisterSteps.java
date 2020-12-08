@@ -1,11 +1,9 @@
 package StepDefinitions;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import PageFactory.RegistrationPage_PF;
+import pagefactory.RegistrationPage_PF;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -24,7 +22,7 @@ public class RegisterSteps {
 		String projectPath = System.getProperty("user.dir");
 		System.setProperty("webdriver.chrome.driver", projectPath + "/src/test/resources/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
-		String url = "file:///D:/Tests/registration/Bootstrap%203%20registration%20form%20example%20-%20Bootsnipp.com.html";
+		String url = "file:///home/user/SelenuimProjects/Bootstrap%203%20registration%20form%20example%20-%20Bootsnipp.com.html";
 
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
@@ -33,30 +31,28 @@ public class RegisterSteps {
 
 		driver.get(url);
 	}
-	
 
 
-	@When("^user enters fullname (.*) $")
-	public void user_enters_full_name(String fullname) throws InterruptedException {
-		System.out.println("============================================================== ");
+
+	@When("^user enters (.*)$")
+	public void user_enters_fullname(String fullname) throws InterruptedException {
+		System.out.println("======================111111======================================== ");
 		register = new RegistrationPage_PF(driver);
 		register.enterFullname(fullname);
 
-		Thread.sleep(2000);
-
+		Thread.sleep(4000);
 	}
 
-	@And("^user enters email (.*) $")
+	@And("^user enters  (.*)$")
 	public void user_enters_email(String email) throws InterruptedException {
-		System.out.println("============================================================== ");
-
+		System.out.println("======================222222======================================== ");
 		register = new RegistrationPage_PF(driver);
 		register.enterEmail(email);
 
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 	}
 
-	@And("^user enters password (.*) $")
+	@And("user enters password ")
 	public void user_enters_password(String password) throws InterruptedException {
 		register = new RegistrationPage_PF(driver);
 		register.enterPassword(password);
@@ -64,13 +60,13 @@ public class RegisterSteps {
 		Thread.sleep(2000);
 	}
 
-	@And("^user enters  (.*)$")
+	@And("user enters date_of_bithday")
 	public void user_enters_date_of_bithday() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		System.out.println("============================================================== empty for now");
+
 	}
 
-	@And("^user cboose the (.*)$")
+	@And("user cboose the country")
 	public void user_cboose_the_country(String country) throws InterruptedException {
 		register = new RegistrationPage_PF(driver);
 		register.SelectCountry(country);
@@ -78,19 +74,19 @@ public class RegisterSteps {
 		Thread.sleep(2000);
 	}
 
-	@And("^user select the (.*)$")
+	@And("user select the gender")
 	public void user_select_the_gender(String gender) {
 		register = new RegistrationPage_PF(driver);
 		register.ChooseGender(gender);
 	}
 
-	@And("^user check meal preference calorie (.*)$")
+	@And("user check meal preference calorie ")
 	public void user_check_meal_preference_calorie() {
 		register = new RegistrationPage_PF(driver);
 		register.checkTerms();
 	}
 
-	@And("^user check meal preference salt (.*)$")
+	@And("user check meal preference salt ")
 	public void user_check_meal_preference_salt(boolean b) {
 		register = new RegistrationPage_PF(driver);
 		register.checkCalorie(b);
@@ -110,7 +106,6 @@ public class RegisterSteps {
 
 	@Then("a succes message should display")
 	public void a_succes_message_should_display() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		System.out.println("============================================================== empty for now");
 	}
 }
